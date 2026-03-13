@@ -35,13 +35,17 @@ struct Student
 
 
 //结构体指针
+void updateStu(struct Student *p)
+{
+    p->age=21;
+    p->score=80;
+}
+
 int main()
 {
     struct Student stu={"ljh",20,90.5};
-    struct Student *p=&stu;
     printf("姓名:%s 年龄:%d 得分:%.2f\n",stu.name,stu.age,stu.score);
-    p->age=21;
-    p->score=100;
-    printf("姓名:%s 年龄:%d 得分:%.2f\n",p->name,p->age,p->score);
+    updateStu(&stu);
+    printf("姓名:%s 年龄:%d 得分:%.2f\n",stu.name,stu.age,stu.score);
     return 0;
 }
